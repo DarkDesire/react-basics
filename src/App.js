@@ -1,25 +1,37 @@
-import React from "react";
-import './Custom.css'
+import React from 'react';
+import './App.css';
+import Card from './Card'
+import faker from 'faker'
 
-// https://transform.tools/css-to-js
-const styles = {
-  innerDiv: {
-    textAlign: "center",
-    margin: "auto",
-    width: "60%",
-    border: "3px solid black",
-    backgroundColor: "#73AD21",
-    padding: "70px 0"
-  },
-  outerDiv: { 
-    padding: "70px 0", 
-    backgroundColor: "red" }
-}
-
+const buttonsMarkup = (
+  <div>
+    <button className="button button2">Yes</button>
+        <button className="button button3">No</button>
+  </div>
+)
 function App() {
-  return (<div style={styles.outerDiv}>
-    <div style={styles.innerDiv}>This is a green box</div>
-  </div>)
+  return (
+    <div className="App">
+      <Card 
+        avatar={faker.image.avatar()}
+        name={`${faker.name.firstName()} ${faker.name.lastName()}`}
+        title={faker.name.jobTitle()}
+      >{buttonsMarkup}</Card>
+      
+      <Card 
+        avatar={faker.image.avatar()}
+        name={`${faker.name.firstName()} ${faker.name.lastName()}`}
+        title={faker.name.jobTitle()}
+      >{buttonsMarkup}</Card>
+      
+      <Card 
+        avatar={faker.image.avatar()}
+        name={`${faker.name.firstName()} ${faker.name.lastName()}`}
+        title={faker.name.jobTitle()}
+      >{buttonsMarkup}</Card>
+      
+    </div>
+  );
 }
 
 export default App;

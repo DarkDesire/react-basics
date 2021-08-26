@@ -11,14 +11,17 @@ function App() {
       <button className="button button3">No</button>
     </div>
   )
-  const changeNameHandler = () => setName(`${faker.name.firstName()} ${faker.name.lastName()}`)
+  const changeNameHandler = name => setName(name) //
+  const changeInputHandler = event => setName(event.target.value)
 
   return (
     <div className="App">
-      <button className="button button4" onClick={changeNameHandler}>Change Name</button>
+      <button className="button button4" onClick={() => changeNameHandler("Will Smith")}>Change Name</button>
       <Card 
         avatar='https://cdn.fakercloud.com/avatars/nfedoroff_128.jpg'
         name={name}
+        onChangeName={() => changeNameHandler( `${faker.name.firstName()} ${faker.name.lastName()}`)}
+        onChangeInput={changeInputHandler}
         title="Internal Creative Engineer"
       >{buttonsMarkup}</Card>
     </div>

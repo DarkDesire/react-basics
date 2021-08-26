@@ -1,36 +1,38 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
 
 function App() {
+  // consts
+  const cardsSize = 3
+  const cardGenerator = () => ({
+    id: `${faker.name.firstName()}_${faker.name.lastName()}`,
+    name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    title: faker.name.jobTitle(),
+    avatar: faker.image.avatar(),
+  })
   // states
   const [name, setName] = useState("Alan Smith")
+  const [cards, setCards] = useState(Array(cardsSize).fill(0).map(_ => cardGenerator()))
   const [showCard, setShowCard] = useState(true)
   // handlers
-  const changeNameHandler = name => setName(name)
-  const changeInputHandler = event => setName(event.target.value)
-  const toogleShowCard = () => setShowCard(!showCard)
-
-  const buttonsMarkup = (
-    <div>
-      <button className="button button2">Yes</button>
-      <button className="button button3">No</button>
-    </div>
-  )
-
-  const cardsMarkup = showCard && 
-    <Card 
-      avatar='https://cdn.fakercloud.com/avatars/nfedoroff_128.jpg'
-      name={name}
-      onChangeName={() => changeNameHandler( `${faker.name.firstName()} ${faker.name.lastName()}`)}
-      onChangeInput={changeInputHandler}
-      title="Internal Creative Engineer"
-    >{buttonsMarkup}</Card>
+  const changeNameHandler = (event, id) => (console.log(event.target))
+  const toogleShowCard = _ => setShowCard(!showCard)
+  const deleteCardHandler = cardIdToDelete => {
+    var cards_copy = [...cards]
+    cards_copy = cards_copy.filter(card => card.id !== cardIdToDelete)
+    setCards(cards_copy)
+  }
+  const addCardHandler = _ => {setCards([...cards, cardGenerator()])}
   
+  // logic
+  const cardsMarkup = showCard && cards.map(card =>
+    <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id} onDelete={() => deleteCardHandler(card.id)} />)
   return (
     <div className="App">
-      <button className="button button4" onClick={toogleShowCard}>Toogle show/hide</button>
+      <p><button className="button button-green" onClick={addCardHandler}>Add card</button></p>
+      <p><button className="button button-blue" onClick={toogleShowCard}>Toogle show/hide</button></p>
       {cardsMarkup}
     </div>
   );

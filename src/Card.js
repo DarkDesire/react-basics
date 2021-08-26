@@ -9,7 +9,7 @@ const Card = props => {
             <h4><b>{props.name}</b></h4>
             <input type="text" onChange={props.onChangeInput} value={props.name}></input>
             <p>{props.title}</p>
-            <p><button className="button button4" onClick={props.onChangeName}>Change Name</button></p>
+            <p><button className="button button4" onClick={props.onChangeName}>Change name</button></p>
             <div>{props.children}</div>
             </div>
         </div>

@@ -2,22 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
-import styled from 'styled-components'
+import { ThemeProvider } from 'styled-components'
+import Button from './components/Button'
+import Theme from './components/Theme'
 
-const Button = styled.button `
-  background-color: ${props =>props.length>2 ? '#4CAF50': 
-    props.length<2? 'red': 'lightpink'};
-  border: none;
-  color: ${props =>props.length<=1 ?'black': 'white'};
-  padding: 5px 15px;
-  font-weight: ${props =>props.length<=1 ?'bold': 'normal'};
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-`
 function App() {
   // consts
   const cardsSize = 3
@@ -49,22 +37,23 @@ function App() {
     cards_copy = cards_copy.filter(card => card.id !== cardIdToDelete)
     setCards(cards_copy)
   }
-  const addCardHandler = _ => {setCards([...cards, cardGenerator()])}
-  
+  const addCardHandler = _ => { setCards([...cards, cardGenerator()]) }
+
   // logic
 
   const cardsMarkup = showCard && cards.map(card =>
-    <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id} 
-      onDelete={() => deleteCardHandler(card.id)} 
-      onChangedName = {(event) => changeNameHandler(event, card.id) }
-
+    <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id}
+      onDelete={() => deleteCardHandler(card.id)}
+      onChangedName={(event) => changeNameHandler(event, card.id)}
     />)
   return (
-    <div className="App">
-      <Button length={cards.length} onClick={toogleShowCard}>Toogle show/hide</Button>
-      <p><button className="button button-green" onClick={addCardHandler}>Add card</button></p>
-      {cardsMarkup}
-    </div>
+    <ThemeProvider theme={Theme} >
+      <div className="App">
+        <Button color="mango" length={cards.length} onClick={toogleShowCard}>Toogle show/hide</Button>
+        <p><button className="button button-green" onClick={addCardHandler}>Add card</button></p>
+        {cardsMarkup}
+      </div>
+    </ThemeProvider>
   );
 }
 

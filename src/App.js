@@ -2,7 +2,22 @@ import React, { useState } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
+import styled from 'styled-components'
 
+const Button = styled.button `
+  background-color: ${props =>props.length>2 ? '#4CAF50': 
+    props.length<2? 'red': 'lightpink'};
+  border: none;
+  color: ${props =>props.length<=1 ?'black': 'white'};
+  padding: 5px 15px;
+  font-weight: ${props =>props.length<=1 ?'bold': 'normal'};
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+`
 function App() {
   // consts
   const cardsSize = 3
@@ -37,9 +52,6 @@ function App() {
   const addCardHandler = _ => {setCards([...cards, cardGenerator()])}
   
   // logic
-  const classes = ['button']
-  if (cards.length < 3) classes.push("lightpink")
-  if (cards.length < 2) classes.push("red text")
 
   const cardsMarkup = showCard && cards.map(card =>
     <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id} 
@@ -49,8 +61,8 @@ function App() {
     />)
   return (
     <div className="App">
+      <Button length={cards.length} onClick={toogleShowCard}>Toogle show/hide</Button>
       <p><button className="button button-green" onClick={addCardHandler}>Add card</button></p>
-      <p><button className={classes.join(' ')} onClick={toogleShowCard}>Toogle show/hide</button></p>
       {cardsMarkup}
     </div>
   );

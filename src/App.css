@@ -42,3 +42,14 @@ img {
 .button-blue {background-color: #008CBA;} /* Blue */
 .button-red {background-color: #f44336;} /* Red */ 
 .button-green {background-color: #4CAF50;} /* Green */ 
+
+.text{
+  font-weight: bold;
+  color: black;
+}
+.lightpink{
+  background-color: lightpink;
+}
+.red{
+  background-color: red;
+}

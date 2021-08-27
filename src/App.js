@@ -37,10 +37,10 @@ function App() {
   const addCardHandler = _ => {setCards([...cards, cardGenerator()])}
   
   // logic
-  const buttonStyle = {backgroundColor: null}
-  if (cards.length < 3) buttonStyle.backgroundColor = "lightpink"
-  if (cards.length < 2) buttonStyle.backgroundColor = "red"
-  
+  const classes = ['button']
+  if (cards.length < 3) classes.push("lightpink")
+  if (cards.length < 2) classes.push("red text")
+
   const cardsMarkup = showCard && cards.map(card =>
     <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id} 
       onDelete={() => deleteCardHandler(card.id)} 
@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="App">
       <p><button className="button button-green" onClick={addCardHandler}>Add card</button></p>
-      <p><button className="button button-blue"  style={buttonStyle} onClick={toogleShowCard}>Toogle show/hide</button></p>
+      <p><button className={classes.join(' ')} onClick={toogleShowCard}>Toogle show/hide</button></p>
       {cardsMarkup}
     </div>
   );

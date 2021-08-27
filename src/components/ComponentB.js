@@ -1,6 +1,6 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import ComponentC from './ComponentC'
-import {NameContext, ColorContext} from '../ReactContextApp'
+import { NameContext, ColorContext } from '../ReactUseContextApp'
 
 const ComponentB = () => {
     const name = useContext(NameContext)
@@ -9,7 +9,7 @@ const ComponentB = () => {
         <div>
             <div>ComponentB</div>
             <div>Name:{name} | Color:{color}</div>
-            <ComponentC/>
+            <ComponentC />
         </div>
     )
 }

@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import CardApp from './CardApp';
-import ReactContextApp from './ReactContextApp'
+import ReactUseContextApp from './ReactUseContextApp'
+import ReactUseReducerApp from './ReactUseReducerApp'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReactContextApp />
+    <ReactUseReducerApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

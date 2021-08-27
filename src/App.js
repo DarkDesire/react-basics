@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
@@ -6,59 +6,55 @@ import { ThemeProvider } from 'styled-components'
 import Button from './components/Button'
 import Theme from './components/Theme'
 
-class App extends Component {
-  // init
-  constructor(props) {
-    super(props)
-
-    const cardsSize = 3
-    
-    this.state = {
-      cards: Array(cardsSize).fill(0).map(_ => this.cardGenerator()),
-      showCard: true
-    }
-  }
-  // functions
-  cardGenerator = () => ({
+function App() {
+  // consts
+  const cardsSize = 3
+  const cardGenerator = () => ({
     id: `${faker.name.firstName()}_${faker.name.lastName()}`,
     name: `${faker.name.firstName()} ${faker.name.lastName()}`,
     title: faker.name.jobTitle(),
     avatar: faker.image.avatar(),
   })
-  changeNameHandler = (event, cardId) => {
+  // states
+  const [name, setName] = useState("Alan Smith")
+  const [cards, setCards] = useState(Array(cardsSize).fill(0).map(_ => cardGenerator()))
+  const [showCard, setShowCard] = useState(true)
+  // handlers
+  const changeNameHandler = (event, cardId) => {
     // which card
-    const index = this.state.cards.findIndex(card => card.id === cardId)
+    const index = cards.findIndex(card => card.id === cardId)
     // copy
-    var cards_copy = [...this.state.cards]
+    var cards_copy = [...cards]
+    console.log('card_copy', cards_copy)
     // change the name of specific card
     cards_copy[index].name = event.target.value
-    this.setState({ cards: cards_copy })
+    console.log('card_copy', cards_copy)
+    setCards(cards_copy)
   }
-  toogleShowCard = _ => this.setState({ showCard: !this.state.showCard })
-  deleteCardHandler = cardIdToDelete => {
-    var cards_copy = [...this.state.cards]
+  const toogleShowCard = _ => setShowCard(!showCard)
+  const deleteCardHandler = cardIdToDelete => {
+    var cards_copy = [...cards]
     cards_copy = cards_copy.filter(card => card.id !== cardIdToDelete)
-    this.setState({ cards: cards_copy })
+    setCards(cards_copy)
   }
-  addCardHandler = _ => { this.setState({ cards:[...this.state.cards, this.cardGenerator()]})}
+  const addCardHandler = _ => { setCards([...cards, cardGenerator()]) }
 
   // logic
-  render() {
-    const cardsMarkup = this.state.showCard && this.state.cards.map(card =>
-      <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id}
-        onDelete={() => this.deleteCardHandler(card.id)}
-        onChangedName={(event) => this.changeNameHandler(event, card.id)}
-      />)
-    return (
-      <ThemeProvider theme={Theme} >
-        <div className="App">
-          <Button color="mango" length={this.state.cards.length} onClick={this.toogleShowCard}>Toogle show/hide</Button>
-          <p><button className="button button-green" onClick={this.addCardHandler}>Add card</button></p>
-          {cardsMarkup}
-        </div>
-      </ThemeProvider>
-    );
-  }
+
+  const cardsMarkup = showCard && cards.map(card =>
+    <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id}
+      onDelete={() => deleteCardHandler(card.id)}
+      onChangedName={(event) => changeNameHandler(event, card.id)}
+    />)
+  return (
+    <ThemeProvider theme={Theme} >
+      <div className="App">
+        {cards.length>0 && <Button color="mango" length={cards.length} onClick={toogleShowCard}>Toogle show/hide</Button>}
+        <p><button className="button button-green" onClick={addCardHandler}>Add card</button></p>
+        {cardsMarkup}
+      </div>
+    </ThemeProvider>
+  );
 }
 
 export default App;

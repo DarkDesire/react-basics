@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
@@ -19,9 +19,6 @@ function App() {
   const [name, setName] = useState("Alan Smith")
   const [cards, setCards] = useState(Array(cardsSize).fill(0).map(_ => cardGenerator()))
   const [showCard, setShowCard] = useState(true)
-  useEffect(() => {
-    alert("App js useEffect")
-  }, [cards])
   // handlers
   const changeNameHandler = (event, cardId) => {
     // which card

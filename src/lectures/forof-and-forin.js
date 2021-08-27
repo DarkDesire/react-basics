@@ -1,11 +1,11 @@
 const fruitsObject = {
-    apple: 13,
-    orange: 17,
-    banana:15
+  apple: 13,
+  orange: 17,
+  banana: 15
 }
 // for in - objects
 for (const key in fruitsObject) {
-    console.log(fruitsObject[key])
+  console.log(fruitsObject[key])
 }
 // for of - array, string, TypedArray, Map, Set
 const iterable = 'boo';

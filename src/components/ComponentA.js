@@ -4,7 +4,7 @@ const ComponentA = () => {
     return (
         <div>
             <div>ComponentA</div>
-            <ComponentB/>
+            <ComponentB />
         </div>
     )
 }

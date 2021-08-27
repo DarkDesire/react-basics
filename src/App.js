@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import Button from './components/Button'
 import Theme from './components/Theme'
 
-function App() {
+function App() {  
   // consts
   const cardsSize = 3
   const cardGenerator = () => ({
@@ -15,10 +15,13 @@ function App() {
     title: faker.name.jobTitle(),
     avatar: faker.image.avatar(),
   })
-  // states
+  // hooks
   const [name, setName] = useState("Alan Smith")
   const [cards, setCards] = useState(Array(cardsSize).fill(0).map(_ => cardGenerator()))
   const [showCard, setShowCard] = useState(true)
+  useEffect(() => {
+    alert("App js useEffect")
+  }, [cards])
   // handlers
   const changeNameHandler = (event, cardId) => {
     // which card

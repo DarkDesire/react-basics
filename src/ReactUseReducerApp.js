@@ -1,9 +1,10 @@
 import React from 'react'
+import Counter from './components/Counter'
 
 function ReactUseReducerApp() {
     return (
         <div className="App">
-            <div>blank</div>
+            <Counter/>
         </div>
     )
 }

@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Card from './Card'
 import faker from 'faker'
 import { ThemeProvider } from 'styled-components'
 import Button from './components/Button'
 import Theme from './components/Theme'
+import axios from 'axios'
 
 function App() {  
   // consts
-  const cardsSize = 3
   const cardGenerator = () => ({
     id: `${faker.name.firstName()}_${faker.name.lastName()}`,
     name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-    title: faker.name.jobTitle(),
-    avatar: faker.image.avatar(),
+    phone: faker.phone.phoneNumber(),
+    email: faker.internet.email(),
+    avatar: faker.internet.avatar()
   })
   // hooks
-  const [name, setName] = useState("Alan Smith")
-  const [cards, setCards] = useState(Array(cardsSize).fill(0).map(_ => cardGenerator()))
+  const [cards, setCards] = useState([])
   const [showCard, setShowCard] = useState(true)
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/users")
+    .then(res=>{
+      setCards(res.data.map(user => ({...cardGenerator(), ...user, id:user.name.replace(/ /g,"_") })))
+    })
+  }, [])
   // handlers
   const changeNameHandler = (event, cardId) => {
     // which card
@@ -42,7 +48,11 @@ function App() {
   // logic
 
   const cardsMarkup = showCard && cards.map(card =>
-    <Card avatar={card.avatar} name={card.name} title={card.title} key={card.id}
+    <Card avatar={card.avatar} 
+      name={card.name} 
+      phone={card.phone} 
+      email={card.email} 
+      key={card.id}
       onDelete={() => deleteCardHandler(card.id)}
       onChangedName={(event) => changeNameHandler(event, card.id)}
     />)

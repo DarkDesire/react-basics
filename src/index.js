@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import CardApp from './CardApp';
+import ReactContextApp from './ReactContextApp'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ReactContextApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

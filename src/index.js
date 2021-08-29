@@ -5,10 +5,11 @@ import CardApp from './CardApp';
 import ReactUseContextApp from './ReactUseContextApp'
 import ReactUseReducerApp from './ReactUseReducerApp'
 import reportWebVitals from './reportWebVitals';
+import ReducerAppAndContextApp from './ReducerAppAndContextApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReactUseReducerApp/>
+    <ReducerAppAndContextApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import "./App.css";
 //import App from './projects/p2cardList/App';
 //import App from './projects/p3hooks/useContext/App'
 //import App from './projects/p3hooks/useReducer/App'
 import reportWebVitals from './reportWebVitals';
 //import App from './projects/p3hooks/useReducer-useContext/App';
-import App from './projects/p3hooks/useReducer-useEffect-axios/App';
+//import App from './projects/p3hooks/useReducer-useEffect-axios/App';
+import App from './projects/p3hooks/useMemo/App';
 
 ReactDOM.render(
   <React.StrictMode>

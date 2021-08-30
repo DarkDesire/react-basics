@@ -1,8 +1,7 @@
 import React, {useReducer} from 'react'
 import ComponentA2 from './components/ComponentA2'
 
-// useReducer +
-// useContext
+// useReducer + useContext
 
 export const CounterContext = React.createContext()
 const initialState = {
@@ -20,7 +19,7 @@ const reducer = (state, action) => {
             return state
     }
 }
-function ReducerAppAndContextApp() { 
+function ReducerContextApp() { 
     const [state, dispatch] = useReducer(reducer, initialState)
     return (
         <CounterContext.Provider value={{counter: state.counter, dispatch:dispatch}}>
@@ -30,4 +29,4 @@ function ReducerAppAndContextApp() {
         </CounterContext.Provider>
     )
 }
-export default ReducerAppAndContextApp
+export default ReducerContextApp

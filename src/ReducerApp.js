@@ -1,11 +1,12 @@
 import React from 'react'
 import Counter from './components/Counter'
 
-function ReactUseReducerApp() {
+// useReducer
+function ReducerApp() {
     return (
         <div className="App">
             <Counter/>
         </div>
     )
 }
-export default ReactUseReducerApp
+export default ReducerApp

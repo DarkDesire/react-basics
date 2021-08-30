@@ -3,7 +3,8 @@ import ComponentA from './components/ComponentA'
 export const NameContext = React.createContext()
 export const ColorContext = React.createContext()
 
-function ReactUseContextApp() {
+// useContext
+function ContextApp() {
     return (
         <div className="App">
             <NameContext.Provider value={'Smith'}>
@@ -14,4 +15,4 @@ function ReactUseContextApp() {
         </div>
     )
 }
-export default ReactUseContextApp
+export default ContextApp

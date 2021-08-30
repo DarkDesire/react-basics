@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import CardApp from './CardApp';
-import ReactUseContextApp from './ReactUseContextApp'
-import ReactUseReducerApp from './ReactUseReducerApp'
+import ContextApp from './ContextApp'
+import ReducerApp from './ReducerApp'
 import reportWebVitals from './reportWebVitals';
-import ReducerAppAndContextApp from './ReducerAppAndContextApp';
+import ReducerContextApp from './ReducerContextApp';
+import ReducerAxiosFetchDataApp from './ReducerAxiosFetchDataApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReducerAppAndContextApp />
+    <ReducerAxiosFetchDataApp />
   </React.StrictMode>,
   document.getElementById('root')
 );

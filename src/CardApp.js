@@ -7,6 +7,7 @@ import Button from "./components/Button";
 import Theme from "./components/Theme";
 import axios from "axios";
 
+// useState+useEffect + ThemeProvider
 function App() {
   // consts
   const cardGenerator = () => ({

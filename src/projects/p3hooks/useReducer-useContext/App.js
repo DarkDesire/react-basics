@@ -1,5 +1,5 @@
 import React, {useReducer} from 'react'
-import ComponentA2 from './components/ComponentA2'
+import ComponentA2 from './ComponentA2'
 
 // useReducer + useContext
 
@@ -19,7 +19,7 @@ const reducer = (state, action) => {
             return state
     }
 }
-function ReducerContextApp() { 
+function App() { 
     const [state, dispatch] = useReducer(reducer, initialState)
     return (
         <CounterContext.Provider value={{counter: state.counter, dispatch:dispatch}}>
@@ -29,4 +29,4 @@ function ReducerContextApp() {
         </CounterContext.Provider>
     )
 }
-export default ReducerContextApp
+export default App

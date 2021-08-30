@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CardApp from './CardApp';
-import ContextApp from './ContextApp'
-import ReducerApp from './ReducerApp'
+//import App from './projects/p2cardList/App';
+//import App from './projects/p3hooks/useContext/App'
+//import App from './projects/p3hooks/useReducer/App'
 import reportWebVitals from './reportWebVitals';
-import ReducerContextApp from './ReducerContextApp';
-import ReducerAxiosFetchDataApp from './ReducerAxiosFetchDataApp';
+//import App from './projects/p3hooks/useReducer-useContext/App';
+import App from './projects/p3hooks/useReducer-useEffect-axios/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReducerAxiosFetchDataApp />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

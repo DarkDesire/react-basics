@@ -28,7 +28,8 @@ const reducer = (state,action) => {
             return state
     }
 }
-function ReducerAxiosFetchDataApp() { 
+
+function App() { 
     const [state, dispatch] = useReducer(reducer, initialState)
     useEffect(() => { 
         axios.get("https://jsonplaceholder.typicode.com/todos")
@@ -47,4 +48,5 @@ function ReducerAxiosFetchDataApp() {
             </div>
     )
 }
-export default ReducerAxiosFetchDataApp
+
+export default App

@@ -1,10 +1,10 @@
 import React from 'react'
-import ComponentA from './components/ComponentA'
+import ComponentA from './ComponentA'
 export const NameContext = React.createContext()
 export const ColorContext = React.createContext()
 
 // useContext
-function ContextApp() {
+function App() {
     return (
         <div className="App">
             <NameContext.Provider value={'Smith'}>
@@ -15,4 +15,4 @@ function ContextApp() {
         </div>
     )
 }
-export default ContextApp
+export default App

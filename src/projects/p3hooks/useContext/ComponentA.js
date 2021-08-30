@@ -1,5 +1,5 @@
 import React from 'react'
-import ComponentB from './ComponentB'
+import ComponentB from '../../../components/ComponentB'
 const ComponentA = () => {
     return (
         <div>

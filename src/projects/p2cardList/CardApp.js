@@ -3,8 +3,8 @@ import "./App.css";
 import Card from "./Card";
 import faker from "faker";
 import { ThemeProvider } from "styled-components";
-import Button from "./components/Button";
-import Theme from "./components/Theme";
+import Button from "./Button";
+import Theme from "./Theme";
 import axios from "axios";
 
 // useState+useEffect + ThemeProvider

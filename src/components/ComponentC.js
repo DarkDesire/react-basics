@@ -1,6 +1,6 @@
 import React from 'react'
-import { NameContext } from '../ReactUseContextApp'
-import { ColorContext } from '../ReactUseContextApp'
+import { NameContext } from '../ContextApp'
+import { ColorContext } from '../ContextApp'
 
 const ComponentC = () => {
     return (

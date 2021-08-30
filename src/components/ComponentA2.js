@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, ButtonGroup, Badge } from 'reactstrap';
-import { CounterContext } from "../ReducerAppAndContextApp"
+import { CounterContext } from "../ReducerContextApp"
 import ComponentB2 from './ComponentB2'
 
 const ComponentA2 = () => {

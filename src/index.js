@@ -8,7 +8,8 @@ import "./App.css";
 import reportWebVitals from './reportWebVitals';
 //import App from './projects/p3hooks/useReducer-useContext/App';
 //import App from './projects/p3hooks/useReducer-useEffect-axios/App';
-import App from './projects/p3hooks/useMemo/App';
+//import App from './projects/p3hooks/useMemo/App';
+import App from './projects/p3hooks/useRef/App';
 
 ReactDOM.render(
   <React.StrictMode>

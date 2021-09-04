@@ -15,6 +15,7 @@ import reportWebVitals from './reportWebVitals';
 //import App from './projects/p3hooks/customHook/useCounter/App';
 //import App from './projects/p3hooks/customHook/useInput/App';
 import App from './projects/p4router/App';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>

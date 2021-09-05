@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import React from "react";
+import { NavLink, withRouter } from "react-router-dom";
 import auth from "../auth";
 const Navbar = (props) => {
   const authHandler = () => {
@@ -9,7 +9,7 @@ const Navbar = (props) => {
       });
     } else {
       auth.login(() => {
-        props.history.push("/about");
+        props.history.push("/");
       });
     }
   };

@@ -8,9 +8,7 @@ const Post = (props) => {
         (async () => {
             const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
             setPost(res.data)
-
         })();
-
     }, []);
     return (
         <div className="mt-10">

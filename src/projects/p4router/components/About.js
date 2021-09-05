@@ -1,5 +1,5 @@
 import React from 'react'
-import Colorful from './hoc/Colorful'
+import Colorful from '../hoc/Colorful'
 import faker from 'faker'
 const About = () => {
     return (

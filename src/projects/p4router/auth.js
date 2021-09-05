@@ -7,7 +7,7 @@ class Auth {
         cb()
     }
     logout(cb){
-        this.authenticated = true; 
+        this.authenticated = false; 
         cb()
     }
     isAuthenticated(){

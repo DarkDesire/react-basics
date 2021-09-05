@@ -1,10 +1,12 @@
 import React from 'react'
-import faker from 'faker'
 
-const PageNotFound = (props) => {
+const PageNotFound = () => {
     return (
-        <div className="container">
-            <h4 className="center">PageNotFound</h4>
+        <div>
+                <div className="container">
+            <h4 className="center">Page Not Found</h4>
+           
+        </div>
         </div>
     )
 }

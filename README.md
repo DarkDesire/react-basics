@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# React Basics Course
+`npx create-react-app react-app`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`npm start`
 
-## Available Scripts
+`npm run build`
 
-In the project directory, you can run:
+# Structure of course:
+## Section  1: [OPTIONAL] Quick review on es6
 
-### `npm start`
+3. var let and const
+4. The problem of using let in switch cases
+5. Template literal
+6. Arrow function
+7. Classes
+8. Spread operator
+9. Destructuring
+10. Primitive vs Reference
+11. Primitive vs Reference
+12. Import and export
+13. Array function
+14. For in \ For of
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Section  2: [REACT ESSENTIALS] JSX
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+15. What is JSX?
+16. Import CSS
+17. inline CSS
+18. Curly braces in react
+19. Styles object
+20. Fast track to convert CSS to JS object
+21. store jsx element to variable
 
-### `npm test`
+## Section  3: [REACT ESSENTIALS] Functional Component
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+22. Create a list of card
+23. Create card component
 
-### `npm run build`
+## Section  4: [REACT ESSENTIALS] Props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+24. Pass and receive props
+25. Pass multiple props
+26. The children of props
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Section  5: [REACT ESSENTIALS] State
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+27. useState and Change of State
+28. passing function to component
+29. Two way binding
+30. Conditional rendering
 
-### `npm run eject`
+## Section  6: [REACT ESSENTIALS] List
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+31. Rendering a list of cards
+32. Delete a specific card
+33. Fix unique key error
+34. Change the name of a specific card
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Section  7: [REACT ESSENTIALS] Style
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+35. Dynamic style with javascript
+36. Dynamic style with classes
+37. Styled component
+38. Theme
+39. Extract the styled button
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Section  8: [REACT ESSENTIALS] Lifecycle and useEffect
 
-## Learn More
+40. Convert functional base to class base
+41. Convert Card component to class base component
+42. Life Cycle Methods Diagram
+43. React lifecycle - mounting
+44. React lifecycle - updating
+45. React lifecycle - unmounting
+46. useEffect
+47. useEffect clean up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Section  9: [REACT ESSENTIALS] React hooks - to improve the performance of the app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+48. useEffect fetch data with axios
+49. useEffect fetch a card
+50. React Context
+51. Multiple React Context
+52. useContext
+53. useReducer (Simpiflied)
+54. useReducer (Normal)
+55. multiple useReducer
+56. useReducer with useContext
+57. use of useReducer with useContext
+58. use useReducer with useEffect to fetch the data
+59. Beautify the list with ReactStrap / Bootstrap
+60. useMemo
+61. useMemo #2
+62. useRef
+63. useRef - deal with the unmount component problems
+64. useCallback - to prevent the recreation of function
+65. custom Hook - extract the logic
+66. custom Hook.- using in form
 
-### Code Splitting
+## Section  10: [REACT ESSENTIALS] React Router
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+67. React Router
+68. Link and NavLink
+69. Program to redirect
+70. Higher Order Component
+71. Fetch the posts by using axios
+72. Passing Parameters
+73. Fetch specific post and using Switch from React Router
+74. Page Not Found
+75. Protected Route
+76. Apply Protected Route
 
-### Analyzing the Bundle Size
+## Section  11: [REACT ESSENTIALS] Redux
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+77. Redux simplified version
+78. Reducer
+79. Store
+80. Actions
+81. Display the value with useSelector and also useDispatch
+82. Dispatch the login action

@@ -1,10 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch as dispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { increment, decrement, auth } from './actions'
 
 function App() {
   const counter = useSelector(state => state.counter)
   const login = useSelector(state => state.login)
+  const dispatch = useDispatch()
   const btnText = login ? 'logout' : 'login'
   return (
     <div className="App">

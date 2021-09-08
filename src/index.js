@@ -14,14 +14,26 @@ import reportWebVitals from './reportWebVitals';
 //import App from './projects/p3hooks/useCallback/App';
 //import App from './projects/p3hooks/customHook/useCounter/App';
 //import App from './projects/p3hooks/customHook/useInput/App';
-import App from './projects/p4router/App';
+//import App from './projects/p4router/App';
+
+import App from './projects/p5redux/App';
+import { createStore } from 'redux';
+import allreducers from './projects/p5redux/reducers';
+import { Provider } from 'react-redux';
+
+const reduxDevExtension = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = createStore(allreducers, reduxDevExtension)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
+  ,
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
